@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur5e_cg">
+
+    <xacro:include filename="$(find ur_description)/urdf/inc/ur5e_macro.xacro" />
+    <xacro:include filename="$(find tennisball_demo_v2)/robot_description/urdf/ur5e_camera_gripper.xacro" />
+
+    <!-- CAMERA -->
+    <xacro:property name="camera_link_x" value="0" /> 
+    <xacro:property name="camera_link_y" value="0.0579" />
+    <xacro:property name="camera_link_z" value="0.0102" />
+    <xacro:property name="camera_link_p" value="-1.57" />
+    <xacro:property name="camera_link_yaw" value="-1.57" />
+  
+    <xacro:arg name="use_nominal_extrinsics" default="false" />
+    <xacro:include filename="$(find realsense2_description)/urdf/_d455.urdf.xacro"/>
+
+    <xacro:sensor_d455 parent="camera_support">
+        <origin xyz="${camera_link_x} ${camera_link_y} ${camera_link_z+0.004}" rpy="0 ${camera_link_p} ${camera_link_yaw}"/>
+    </xacro:sensor_d455>
+
+    <xacro:ur5e_robot prefix="" />
+    <xacro:camera_with_gripper />
+  
+
+</robot>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <env name="ROSCONSOLE_FORMAT" value="[${severity}] [${node}] [${line}]: ${message}"/>
+    
+    <param name="robot_description" command="xacro '$(find tennisball_demo_v2)/robot_description/urdf/ur5e_full.xacro'" />
+    <arg name="kinematics_params" default="$(find ur_description)/config/ur5e/default_kinematics.yaml"/>
+</launch>

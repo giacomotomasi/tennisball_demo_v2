@@ -1,0 +1,26 @@
+  gazebo_ros_control:
+    pid_gains:
+      shoulder_pan_joint:
+        p: 10
+        i: 1
+        d: 0
+      shoulder_lift_joint:
+        p: 10
+        i: 1
+        d: 0
+      elbow_joint:
+        p: 10
+        i: 1
+        d: 0
+      wrist_1_joint:
+        p: 10
+        i: 1
+        d: 0
+      wrist_2_joint:
+        p: 10
+        i: 1
+        d: 0
+      wrist_3_joint:
+        p: 10
+        i: 1
+        d: 0

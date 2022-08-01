@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find ur_description)/launch/load_ur5e.launch"/>
+    <param name="robot_description" command="xacro '$(find tennisball_demo_v2)/robot_description/urdf/ur5e_gripper.xacro'" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find tennisball_demo_v2)/rviz/ur5e_gripper.rviz"/>
+</launch>
