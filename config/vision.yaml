@@ -1,0 +1,4 @@
+image:
+    height: 1280
+    width: 720
+    depth: 3 #rgb, depth=4 if rgba
