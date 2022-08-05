@@ -1,3 +1,5 @@
+camera_topic:
+    topic: /camera/color/image_raw
 image:
     height: 1280
     width: 720
