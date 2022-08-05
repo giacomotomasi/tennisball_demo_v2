@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+    <env name="ROSCONSOLE_FORMAT" value="[${severity}] [${node}] [${line}]: ${message}"/>
+
+    <!-- LAUNCH UR5e DRIVERS-->
+    <include file="$(find ur_robot_driver)/launch/ur5e_bringup.launch">
+      <arg name="robot_ip"      value="192.168.56.1"/>
+      <arg name="kinematics_config"      value="$(find tennisball_demo_v2)/ur5e_calibration/ur5e_robot_calibration.yaml"/>
+      <arg name="robot_description_file"      value="$(find tennisball_demo_v2)/launch/load_ur5e_camera_gripper.launch"/>
+    </include>
+
+    <!-- LAUNCH CAMERA WITH POINTCLOUD -->
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+      <arg name="filters"      value="pointcloud"/>
+    </include>
+</launch>
