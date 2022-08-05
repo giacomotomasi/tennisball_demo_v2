@@ -38,6 +38,10 @@ int main(int argc, char** argv){
     std::cout << "===================================" << std::endl;
     std::cout << "Robot current pose:" << std::endl;
     std::cout << move_group.getCurrentPose().pose << std::endl;
+    // std::cout << move_group.getCurrentJointValues() << std::endl;
+    std::vector<double> v = move_group.getCurrentJointValues();
+    for (auto i:v)
+        std::cout << i << std::endl;
     
     return 0;
 }
