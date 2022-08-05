@@ -18,12 +18,13 @@ from detectron2.data import MetadataCatalog, DatasetCatalog
 
 class Detector(object):
     def __init__(self):
-        self.image_sub = rospy.Subscriber('/camera/color/image_raw', Image, self.im_callback)
         # self.height = rospy.get_param('camera/realsense2_camera/color_height', 720) # it takes a value of -1 (???)
         # self.width = rospy.get_param('camera/realsense2_camera/color_width', 1280)
         self.height = rospy.get_param('image/height', 720)
         self.width = rospy.get_param('image/width', 1280)
         self.depth = rospy.get_param('image/depth', 3)
+        camera_topic = rospy.get_param('camera_topic/topic', "/camera/color/image_raw")
+        self.image_sub = rospy.Subscriber('/camera/color/image_raw', Image, self.im_callback)
         self.im = np.zeros((self.height,self.width,self.depth), np.uint8) # create empty image
 
         self.target_object = 32 # index 32
